@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Playing Game";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<body>
+
+
+    <div class="elementsFlex">
+        
+
+        <div id="camera-container">
+            <div class="camera-content">
+                <video id="input_camera" width="320" height="240" autoplay muted playsinline></video>
+                <canvas id="output_canvas" width="320" height="240"></canvas>
+            </div>
+        </div>
+
+        <div id="phaser-container">
+            <!-- Aquí va el canvas de Phaser -->
+        </div>
+
+    </div>
+
+
+    <!-- Scripts aquí -->
+    <!-- MediaPipe desde CDN PRIMERO -->
+    <@Html.Raw("<script src='https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.min.js'></script>")
+    <@Html.Raw("<script src='https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.min.js'></script>")
+    <@Html.Raw("<script src='https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js'></script>")
+
+
+    <!--  CÓDIGO LOCAL -->
+    <script src="~/Content/Src/phaser.js"></script>
+    <script src="~/Content/Src/Code.js"></script>
+    <script src="~/Content/Src/Hands.js"></script>
+</body>
